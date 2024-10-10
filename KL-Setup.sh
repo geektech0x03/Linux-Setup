@@ -60,7 +60,7 @@ echo -e "${Cyan}----- Installing Dependencies -----${NC}"
 
 sudo apt-get update
 sudo apt-get install python3.12 python3.12-venv -y  # SD --> GDB Plugins
-sudo apt-get install git ghidra checksec ropper alacarte aptitude patchelf gobuster gdb google-android-platform-tools-installer -y
+sudo apt-get install git ghidra checksec ropper alacarte aptitude patchelf gobuster gdb google-android-platform-tools-installer gcc-multilib -y
 sudo pip install pwntools
 
 clear
