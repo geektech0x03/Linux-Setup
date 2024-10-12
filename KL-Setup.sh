@@ -203,6 +203,7 @@ echo 'alias frida-pull="/home/kali/Script/Frida/bin/frida-pull"' >> ./.zsh_alias
 echo 'alias frida-push="/home/kali/Script/Frida/bin/frida-push"' >> ./.zsh_aliases
 echo 'alias frida-rm="/home/kali/Script/Frida/bin/frida-rm"' >> ./.zsh_aliases
 echo 'alias frida-trace="/home/kali/Script/Frida/bin/frida-trace"' >> ./.zsh_aliases
+echo 'alias alsroff="echo 0 | sudo tee /proc/sys/kernel/randomize va space"' >> ./.zsh_aliases
 echo 'source /home/kali/.zsh_aliases' >> ./.zshrc
 
 clear
