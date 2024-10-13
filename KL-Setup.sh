@@ -42,6 +42,11 @@ read pinit
 echo -e "${Green}Angry IP Scanner Version : ${NC}"
 read aips
 
+echo -e "${Green}Sublime Merge : ${NC}"
+read subm
+
+echo -e "${Green}Sublime Text : ${NC}"
+read subt
 
 clear
 
@@ -178,6 +183,18 @@ cd bin
 cd ~
 clear
 
+# SublimeText
+
+echo -e "${Cyan}----- Sublime Text ----${NC}"
+
+wget "https://download.sublimetext.com/sublime-text_build-${subt}_amd64.deb"
+wget "https://download.sublimetext.com/sublime-merge_build-${subm}_amd64.deb"
+sudo dpkg -i "sublime-merge_build-${subm}_amd64.deb"
+sudo dpkg -i "sublime-text_build-${subt}_amd64.deb"
+
+cd ~
+clear
+
 # Config Files Setup
 
 echo -e "${Cyan}----- Config Files ----${NC}"
@@ -213,6 +230,8 @@ clear
 echo -e "${Cyan}---- Cleaning ----${NC}"
 
 rm -rf ~/Script/gauto/d522b4f20632c4581af728b286028f8f
+rm ~/sublime-merge_build-${subm}_amd64.deb
+rm ~/sublime-text_build-${subt}_amd64.deb
 rm ~/google-chrome-stable_current_amd64.deb
 rm ~/Software/postman-linux-x64.tar.gz
 rm ~/Software/binaryninja_free_linux.zip
