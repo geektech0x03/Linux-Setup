@@ -42,9 +42,6 @@ read pinit
 echo -e "${Green}Angry IP Scanner Version : ${NC}"
 read aips
 
-echo -e "${Green}Sublime Merge : ${NC}"
-read subm
-
 echo -e "${Green}Sublime Text : ${NC}"
 read subt
 
@@ -188,8 +185,6 @@ clear
 echo -e "${Cyan}----- Sublime Text ----${NC}"
 
 wget "https://download.sublimetext.com/sublime-text_build-${subt}_amd64.deb"
-wget "https://download.sublimetext.com/sublime-merge_build-${subm}_amd64.deb"
-sudo dpkg -i "sublime-merge_build-${subm}_amd64.deb"
 sudo dpkg -i "sublime-text_build-${subt}_amd64.deb"
 
 cd ~
