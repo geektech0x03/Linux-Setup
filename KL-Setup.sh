@@ -62,7 +62,7 @@ echo -e "${Cyan}----- Installing Dependencies -----${NC}"
 
 sudo apt-get update
 sudo apt-get install python3.12 python3.12-venv -y  # SD --> GDB Plugins
-sudo apt-get install git ghidra checksec ropper alacarte aptitude patchelf gobuster gdb gdb-multiarch google-android-platform-tools-installer gcc-multilib ltrace strace -y
+sudo apt-get install git qemu-user libc6-armel-cross libc6-mipsel-cross ghidra checksec ropper alacarte aptitude patchelf gobuster gdb gdb-multiarch google-android-platform-tools-installer gcc-multilib ltrace strace -y
 sudo pip install pwntools
 
 clear
@@ -186,6 +186,26 @@ echo -e "${Cyan}----- Sublime Text ----${NC}"
 
 wget "https://download.sublimetext.com/sublime-text_build-${subt}_amd64.deb"
 sudo dpkg -i "sublime-text_build-${subt}_amd64.deb"
+
+cd ~
+clear
+
+# MIPS
+
+echo -e "${Cyan}----- MIPS ----${NC}"
+
+sudo mkdir /etc/qemu-binfmt
+sudo ln -s /usr/mipsel-linux-gnu /etc/qemu-binfmt/mipsel
+
+cd ~
+clear
+
+# ARM5
+
+echo -e "${Cyan}----- ARM5 ----${NC}"
+
+sudo mkdir /etc/qemu-binfmt
+sudo ln -s /usr/arm-linux-gnueabi /etc/qemu-binfmt/arm
 
 cd ~
 clear
