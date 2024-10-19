@@ -45,6 +45,9 @@ read aips
 echo -e "${Green}Sublime Text : ${NC}"
 read subt
 
+echo -e "${Green}JD-GUI : ${NC}"
+read jdver
+
 clear
 
 # Kali user passwd and Root passwd
@@ -190,6 +193,16 @@ sudo dpkg -i "sublime-text_build-${subt}_amd64.deb"
 cd ~
 clear
 
+# JD-GUI
+
+echo -e "${Cyan}----- JD-GUI ----${NC}"
+
+wget "https://objects.githubusercontent.com/github-production-release-asset-2e65be/32844456/ec518b00-272d-11ea-9cdc-e94fa418eaa5?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241019%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241019T045924Z&X-Amz-Expires=300&X-Amz-Signature=6511797e4856d5eb61d66ffd0843148b7b2c904c3986358c83320b1a4ffef519&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Djd-gui-${jdver}.rpm&response-content-type=application%2Foctet-stream"
+sudo rpm -i "jd-gui-${jdver}.rpm"
+
+cd ~
+clear
+
 # MIPS
 
 echo -e "${Cyan}----- MIPS ----${NC}"
@@ -245,6 +258,7 @@ clear
 echo -e "${Cyan}---- Cleaning ----${NC}"
 
 rm -rf ~/Script/gauto/d522b4f20632c4581af728b286028f8f
+rm ~/jd-gui-${jdver}.rpm
 rm ~/sublime-merge_build-${subm}_amd64.deb
 rm ~/sublime-text_build-${subt}_amd64.deb
 rm ~/google-chrome-stable_current_amd64.deb
