@@ -48,6 +48,9 @@ read subt
 echo -e "${Green}JD-GUI : ${NC}"
 read jdver
 
+echo -e "${Green}Bytecode Viewer : ${NC}"
+read bcv
+
 clear
 
 # Kali user passwd and Root passwd
