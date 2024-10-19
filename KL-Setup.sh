@@ -213,7 +213,7 @@ echo -e "${Cyan}----- Bytecode Viewer ----${NC}"
 cd Software
 mkdir BCViewer; cd BCViewer
 wget "https://objects.githubusercontent.com/github-production-release-asset-2e65be/25201361/4572c427-6733-4dfa-8fb9-ecfa7a69884e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241019%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241019T052957Z&X-Amz-Expires=300&X-Amz-Signature=074c7bdf628d94b26814b4ae6d546d55b210db5d8cea97a09cc5f42e10c914a8&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DBytecode-Viewer-${bver}.jar&response-content-type=application%2Foctet-stream"
-mv ./Bytecode-Viewer-${bver}.jar ./ bcv.jar
+mv ./Bytecode-Viewer-${bver}.jar ./bcv.jar
 
 cd ~
 clear
@@ -263,7 +263,7 @@ echo 'alias frida-pull="/home/kali/Script/Frida/bin/frida-pull"' >> ./.zsh_alias
 echo 'alias frida-push="/home/kali/Script/Frida/bin/frida-push"' >> ./.zsh_aliases
 echo 'alias frida-rm="/home/kali/Script/Frida/bin/frida-rm"' >> ./.zsh_aliases
 echo 'alias frida-trace="/home/kali/Script/Frida/bin/frida-trace"' >> ./.zsh_aliases
-echo 'alias bcv="/home/kali/Software/BCViewer/bcv.jar"' >> ./.zsh_aliases
+echo 'alias bcv="java -jar /home/kali/Software/BCViewer/bcv.jar"' >> ./.zsh_aliases
 echo 'alias alsroff="echo 0 | sudo tee /proc/sys/kernel/randomize_va_space"' >> ./.zsh_aliases
 echo 'source /home/kali/.zsh_aliases' >> ./.zshrc
 
