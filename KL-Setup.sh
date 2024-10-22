@@ -261,8 +261,6 @@ clear
 echo -e "${Cyan}---- Cleaning ----${NC}"
 
 rm -rf ~/Script/gauto/d522b4f20632c4581af728b286028f8f
-rm ~/jd-gui-${jdver}.rpm
-rm ~/sublime-merge_build-${subm}_amd64.deb
 rm ~/sublime-text_build-${subt}_amd64.deb
 rm ~/google-chrome-stable_current_amd64.deb
 rm ~/Software/postman-linux-x64.tar.gz
