@@ -25,6 +25,7 @@ mkdir Temp
 mkdir CTF
 mkdir Script
 mkdir Software
+mkdir Software/BCViewer
 mkdir Script/gauto
 mkdir Script/Pwninit
 mkdir Script/Frida
@@ -44,9 +45,6 @@ read aips
 
 echo -e "${Green}Sublime Text : ${NC}"
 read subt
-
-echo -e "${Green}JD-GUI : ${NC}"
-read jdver
 
 echo -e "${Green}Bytecode Viewer : ${NC}"
 read bver
@@ -68,7 +66,7 @@ echo -e "${Cyan}----- Installing Dependencies -----${NC}"
 
 sudo apt-get update
 sudo apt-get install python3.12 python3.12-venv -y  # SD --> GDB Plugins
-sudo apt-get install git qemu-user libc6-armel-cross libc6-mipsel-cross ghidra checksec ropper alacarte aptitude patchelf gobuster gdb gdb-multiarch google-android-platform-tools-installer gcc-multilib ltrace strace -y
+sudo apt-get install git qemu-user libc6-armel-cross libc6-mipsel-cross ghidra checksec ropper alacarte aptitude jd-gui patchelf gobuster gdb gdb-multiarch google-android-platform-tools-installer gcc-multilib ltrace strace -y
 sudo pip install pwntools
 
 clear
@@ -196,22 +194,11 @@ sudo dpkg -i "sublime-text_build-${subt}_amd64.deb"
 cd ~
 clear
 
-# JD-GUI
-
-echo -e "${Cyan}----- JD-GUI ----${NC}"
-
-wget "https://objects.githubusercontent.com/github-production-release-asset-2e65be/32844456/ec518b00-272d-11ea-9cdc-e94fa418eaa5?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241019%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241019T045924Z&X-Amz-Expires=300&X-Amz-Signature=6511797e4856d5eb61d66ffd0843148b7b2c904c3986358c83320b1a4ffef519&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Djd-gui-${jdver}.rpm&response-content-type=application%2Foctet-stream"
-sudo rpm -i "jd-gui-${jdver}.rpm"
-
-cd ~
-clear
-
 # Bytecode Viewer
 
 echo -e "${Cyan}----- Bytecode Viewer ----${NC}"
 
-cd Software
-mkdir BCViewer; cd BCViewer
+cd Software/BCViewer
 wget "https://objects.githubusercontent.com/github-production-release-asset-2e65be/25201361/4572c427-6733-4dfa-8fb9-ecfa7a69884e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241019%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241019T052957Z&X-Amz-Expires=300&X-Amz-Signature=074c7bdf628d94b26814b4ae6d546d55b210db5d8cea97a09cc5f42e10c914a8&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DBytecode-Viewer-${bver}.jar&response-content-type=application%2Foctet-stream"
 mv ./Bytecode-Viewer-${bver}.jar ./bcv.jar
 
